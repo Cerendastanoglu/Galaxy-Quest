@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Spaceship : MonoBehaviour
 {
+    public float speed = 0.1f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +15,30 @@ public class Spaceship : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        transform.Translate(0f, speed * Time.deltaTime, 0f);
+
+        Camera.main.transform.Translate(0f, speed * Time.deltaTime, 0f);
+
         
+
+        if(Input.GetKey("up"))
+        transform.Translate(0f, +speed * Time.deltaTime, 0f);
+
+        if(Input.GetKey("down"))
+        transform.Translate(0f, -speed * Time.deltaTime, 0f);
+
+        if(Input.GetKey("left"))
+        transform.Translate(-speed * Time.deltaTime, 0f, 0f);
+
+        if(Input.GetKey("right"))
+        transform.Translate(+speed * Time.deltaTime, 0f, 0f);
+
+
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Destroy(gameObject);
     }
 }
+
