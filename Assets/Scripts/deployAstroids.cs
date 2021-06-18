@@ -11,13 +11,13 @@ public class deployAstroids : MonoBehaviour
     // Use this for initialization
     void Start () 
     {
-        screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
+        screenBounds = Camera.main.transform.position;
         StartCoroutine(asteroidWave());
     }
     private void spawnEnemy()
     {
         GameObject a = Instantiate(asteroidPrefab) as GameObject;
-        a.transform.position = new Vector3(screenBounds.x * -2, Random.Range(-screenBounds.y, screenBounds.y));
+        a.transform.position = new Vector3(screenBounds.y * -2, Random.Range(-screenBounds.x, screenBounds.y));
     }
 
     IEnumerator asteroidWave()
