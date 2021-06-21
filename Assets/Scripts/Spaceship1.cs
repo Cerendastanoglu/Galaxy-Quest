@@ -8,9 +8,6 @@ public class Spaceship1 : MonoBehaviour
 
     public float speed = 2f;
     public Camera cam;
-    public GameObject bulletPrefab;
-    public Transform player;
-    public Rigidbody2D rb;
 
     [SerializeField] 
     private string loadScene;
@@ -41,22 +38,12 @@ public class Spaceship1 : MonoBehaviour
         if(Input.GetKey("s"))
         transform.Translate(+speed * Time.deltaTime, 0f, 0f);
 
-        if(Input.GetKey("space")){
-            shootBullet();
-        }
-
     }
 
     private void OnCollisionEnter2D(Collision2D other)
     {
         Destroy(gameObject);
         SceneManager.LoadScene(loadScene);
-    }
-
-    public void shootBullet(){
-        GameObject b = Instantiate(bulletPrefab) as GameObject;
-        b.transform.position = player.transform.position;
-
     }
 
 }
