@@ -1,3 +1,4 @@
-# Up-and-Down
-A game with an Up and Down theme
-Part of my project for a class named Video Game programming
+# Galaxy Quest
+A unity game with simple mechanics.
+I took most of the game objects randomly from the internet, I do not own any of them.
+I wrote the code mostly by myself.
