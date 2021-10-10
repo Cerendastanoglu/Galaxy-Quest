@@ -3,7 +3,7 @@ A unity game with simple mechanics.
 I took most of the game objects randomly from the internet, I do not own any of them.
 I wrote the code mostly by myself.
 
-Here is a sneak peak of the game,
+Here is a sneak peak of the game before it is released to Google Play Store;
 
 
 
